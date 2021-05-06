@@ -22,34 +22,17 @@
 
 <div align="center">
   <h3>
-    <a href="#installation">Installation</a>
+    <a href="#usage">Usage</a>
     <span> | </span>
     <a href="#api">API</a>
     <span> | </span>
-    <a href="#usage">Usage</a>
+    <a href="#distribution">Distribution</a>
   </h3>
 </div>
 
-## Installation
+## Usage
 
-To use your module locally inside an app you can copy the zip file into the app root folder and compile your app.
-The file will automatically be extracted and copied into the correct `modules/` folder.
-
-If you want to use your module globally in all your apps you have to do the following:
-
-### macOS
-
-Copy the distribution zip file into the `~/Library/Application Support/Titanium` folder
-
-### Linux
-
-Copy the distribution zip file into the `~/.titanium` folder
-
-### Windows
-
-Copy the distribution zip file into the `C:\ProgramData\Titanium` folder
-
-## Project Usage
+Unpack the module [here](https://github.com/bduyng/TiUXCam/blob/main/ios/dist/com.bduyng.TiUXCam-iphone-1.0.0.zip) and place it inside the modules/iphone folder of your project.
 
 Register your module with your application by editing `tiapp.xml` and adding your module.
 Example:
@@ -60,12 +43,6 @@ Example:
 
 When you run your project, the compiler will combine your module along with its dependencies
 and assets into the application.
-
-## Building
-
-Simply run `ti build -p [ios|android] --build-only` which will compile and package your module.
-
-## Usage
 
 The `example` directory contains a skeleton application test harness that can be
 used for testing and providing an example of usage to the users of your module.
@@ -86,6 +63,18 @@ var TiUXCam = require('com.bduyng.TiUXCam');
 TiUXCam.startWithKey('YOUR_UXCAM_KEY');
 ```
 
+## API
+
+#### Methods
+
+| Name         | Parameter | Return |
+| ------------ | --------- | ------ |
+| startWithKey | String    | Void   |
+
+## Building
+
+Simply run `ti build -p [ios|android] --build-only` which will compile and package your module.
+
 ## Testing
 
 To test your module with the example, use:
@@ -98,13 +87,4 @@ This will execute the app.js in the example/ folder as a Titanium application.
 
 ## Distribution
 
-You have a variety of choises for distributing your module
-
-- [Gitt.io](http://gitt.io/)
-- [Axway Marketplace](https://marketplace.axway.com/home)
-
-Code strong!
-
-```
-ti build -p ios --build-only --project-dir ./ios && cp '/Users/bduyng/Developer/TitaniumHome/TiUXCam/ios/dist/com.bduyng.TiUXCam-iphone-1.0.0.zip' '/Users/bduyng/Developer/TitaniumHome/TiUXCam/testing/com.bduyng.TiUXCam-iphone-1.0.0.zip' && rm -rf ./testing/modules && rm -rf ./testing/build && ti build -p ios --project-dir ./testing -C 04C8286F-8010-4383-BB1D-E3AABBD4C103
-```
+If you enjoy this module, feel free to contribute with your PR or [donate](https://paypal.me/bduyng) :-)
